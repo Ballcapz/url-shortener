@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shorten em</title>
+    <link
+      href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="p-4">
+    <h1 class="text-4xl p-4">Enter a url below to shorten it!</h1>
+
+    <form action="/shorten" method="POST">
+      <input
+        class="bg-white focus:outline-none focus:shadow-outline border border-gray-400 rounded px-4 py-2 m-2"
+        type="url"
+        placeholder="Url to shorten"
+        name="url"
+      />
+      <button
+        class="bg-indigo-500 hover:bg-indigo-700 text-white px-4 py-2 rounded"
+        type="submit"
+      >
+        Shorten Url
+      </button>
+    </form>
+
+    <% if (shortened) { %>
+    <h3 class="text-2xl p-4">Shortened Url</h3>
+    <div class="px-4 py-2"><%= shortened %> <% } %></div>
+  </body>
+</html>
